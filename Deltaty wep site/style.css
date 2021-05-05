@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Poppins' , sans-serif;
+    --mianColor: #3d3d3d ;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+.nav-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+.logo {
+    width: 40px;
+    transition: 0.2s ease;
+}
+.logo:hover {
+    transform: scale(0.8);
+    opacity: 0.6;
+}
+.menu {
+    display: flex;
+    margin-left: 80px;
+}
+.menu li a {
+    text-decoration: none;
+    padding-left: 30px;
+    color:  var(--mianColor);
+    text-align: center;
+    transition: 0.2s ease;
+}
+.menu li a:hover {
+    opacity: 0.7;
+}
+.open-menu {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    z-index: 100;
+    cursor: pointer;
+    display: none;
+}
+.open-menu i {
+    font-size: 2rem;
+    color: var(--mianColor);
+}
+#check {display: none;}
+.inner-container {
+    width: 100%;
+    height: calc(100vh - 67px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* media queries */
+
+@media(max-width:610px){
+    .menu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        background: #fff;
+        box-shadow: 0 3px 6px rgba(0,0,0,16%);
+        transition: right 0.25s ease-in-out;
+    }
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu {display: block;}
+    #check:checked ~ .menu {
+        right: 0;
+    }
+}
+@media(max-width:470px){
+    .weapon {width: 100px;}
+    .image-wrapper {height: 300px;}
+    .weapon-name {font-size: 1.5rem;}
+}
+@media(max-width:400px){
+    .description {font-size: 12px;}
+}
+@media(max-width:350px){
+    .weapon {width: 90px;}
+    .weapon-name {font-size: 1rem;}
+}
+
+
+
